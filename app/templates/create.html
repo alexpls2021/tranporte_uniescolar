@@ -12,11 +12,13 @@
 
     <div class="form-group">
         <label for="content">Mensagem</label>
-        <textarea name="content" placeholder="testo"
-                  class="form-control">{{ request.form['content'] }}</textarea>
+        <textarea name="content" placeholder="texto" class="form-control">
+                  {{ request.form['content'] }}
+        </textarea>
     </div>
-    <div class="form-group">
+     <div class="form-group">
         <button type="submit" class="btn btn-primary">Enviar</button>
-    </div>
+     </div>
 </form>
+
 {% endblock %}

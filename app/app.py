@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.exceptions import abort
 
 project_dir = os.path.dirname(os.path.abspath(__file__))
-database_file = "sqlite:///{}".format(os.path.join(project_dir, "database.db"))
+database_file = "sqlite:///{}".format(os.path.join(project_dir, "bin/database.db"))
 
 app = Flask('__name__')
 app.config['SECRET_KEY'] = 'your secret key'
@@ -84,12 +84,19 @@ def delete(id):
     return redirect(url_for('index'))
 
 
+@app.route('/responsaveis')
+def responsaveis():
+    return render_template('responsaveis.html')
 
 
+@app.route('/escola')
+def escola():
+    return render_template('escola.html')
 
 
-
-
+@app.route('/transportado')
+def transportado():
+    return render_template('transportado.html')
 
 
 
