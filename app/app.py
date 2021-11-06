@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.exceptions import abort
 
 project_dir = os.path.dirname(os.path.abspath(__file__))
-database_file = "sqlite:///{}".format(os.path.join(project_dir, "bin/database.db"))
+database_file = "sqlite:///{}".format(os.path.join(project_dir, "database.db"))
 
 app = Flask('__name__')
 app.config['SECRET_KEY'] = 'your secret key'
