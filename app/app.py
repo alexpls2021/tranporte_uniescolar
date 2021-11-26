@@ -1,95 +1,57 @@
-from flask import Flask, render_template, request, url_for, flash, redirect
-import os, datetime
-import sqlite3
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from werkzeug.exceptions import abort
 
-project_dir = os.path.dirname(os.path.abspath(__file__))
-database_file = "sqlite:///{}".format(os.path.join(project_dir, "database.db"))
-
-app = Flask('__name__')
-app.config['SECRET_KEY'] = 'your secret key'
-app.config["SQLALCHEMY_DATABASE_URI"] = database_file
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pessoas.sqlite3'
 db = SQLAlchemy(app)
 
+class Pessoas(db.Model):
+     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+     nome = db.Column(db.String(150), nullable=False)
+     cpf = db.Column(db.String(11), nullable=False)
+     end = db.Column(db.String(300), nullable=False)
+     email = db.Column(db.String(150), nullable=False)
 
-class Posts(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    created = db.Column(db.DateTime, default=datetime.datetime.utcnow)
-    title = db.Column(db.String(80), nullable=False)
-    content = db.Column(db.String(200), nullable=False)
+     def __init__(self, nome, cpf, end, email):
+          self.nome = nome
+          self.cpf = cpf
+          self.end = end
+          self.email = email
 
 
 @app.route('/')
 def index():
-    posts = Posts.query.all()
-    return render_template('index.html', posts=posts)
+     return render_template('index.html')
 
 
-def get_post(post_id):
-   post = Posts.query.filter_by(id=post_id).first()
-   if post is None:
-      abort(404)
-   return post
+@app.route('/cadastro' , methods=['GET', 'POST'])
+def cadastro():
+     if request.method == 'POST':
+        pessoa = Pessoas(
+             request.form['nome'],
+             request.form['cpf'],
+             request.form['end'],
+             request.form['email']
+        )  
+        db.session.add(pessoa)
+        db.session.commit()
+        return redirect("/#header")
+     return render_template('cadastro.html')
 
 
-@app.route('/<int:post_id>')
-def post(post_id):
-    post = get_post(post_id)
-    return render_template('post.html', post=post)
 
+@app.route('/consultar')
+def consultar():
+     pessoas = Pessoas.query.all()
+     return render_template('consultar.html', pessoas=pessoas)
 
-@app.route('/create', methods=('GET', 'POST'))
-def create():
-    if request.method == 'POST':
-        title = request.form['title']
-        content = request.form['content']
-
-        if not title:
-            flash('O titulo é obrigatório!')
-        else:
-            post = Posts(title=title, content=content)
-            db.session.add(post)
-            db.session.commit()
-            return redirect(url_for('index'))
-
-    return render_template('create.html')
-
-
-@app.route('/<int:id>/edit', methods=('GET', 'POST'))
-def edit(id):
-    post = get_post(id)
-
-    if request.method == 'POST':
-        title = request.form['title']
-        content = request.form['content']
-
-        if not title:
-            flash('Titulo é obrigatório!')
-        else:
-            post.title = title
-            post.content = content
-            db.session.commit()
-            return redirect(url_for('index'))
-
-    return render_template('edit.html', post=post)
-
-
-@app.route('/<int:id>/delete', methods=('POST',))
+@app.route("/delete/<id>")
 def delete(id):
-    post = get_post(id)
-    db.session.delete(post)
-    db.session.commit()
-    flash('"{}" foi apagado com sucesso!'.format(post.title))
-    return redirect(url_for('index'))
+     pessoa = Pessoas.query.get(id)
+     db.session.delete(pessoa)
+     db.session.commit()
+     return redirect("/consultar")
 
-
-
-
-
-
-
-
-
-
-
+if __name__ == '__main__':
+     db.create_all()
+     app.run(debug=True)
