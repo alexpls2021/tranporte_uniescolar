@@ -43,7 +43,7 @@ def cadastro():
 @app.route('/consultar')
 def consultar():
      pessoas = Pessoas.query.all()
-     return render_template('consultar.html', pessoas=pessoas)
+     return render_template('../consultar.html', pessoas=pessoas)
 
 @app.route("/delete/<id>")
 def delete(id):
