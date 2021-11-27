@@ -62,10 +62,12 @@
     min-height: 22.4rem;
   }
 
+/* Fim da página index.html */
 
+/* Estilos da página cadastro.html */
   section#cadastro {
     background: linear-gradient(
-      #3359ec 50%,
+      #ffc107 50%,
       #fff 50%
     );
     width: 100%;
@@ -168,6 +170,10 @@
     margin-bottom: 2rem;
   }
 
+  /* Fin da página cadastro.html */
+
+  /* Estilos da página Responsaveis.html */
+
   /*section#consultar {
     background: linear-gradient(
       #3359ec 50%,
@@ -262,5 +268,7 @@
     text-shadow: 1px 1px 2px #2cb91a;
     margin-bottom: 2rem;
   }*/
+
+  /* Fim da página Responsaveis.html */
 
   

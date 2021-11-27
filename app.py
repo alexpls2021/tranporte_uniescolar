@@ -23,6 +23,7 @@ class Pessoas(db.Model):
 def index():
      return render_template('index.html')
 
+     
 
 @app.route('/cadastro' , methods=['GET', 'POST'])
 def cadastro():
@@ -39,7 +40,6 @@ def cadastro():
      return render_template('cadastro.html')
 
 
-
 @app.route('/consultar')
 def consultar():
      pessoas = Pessoas.query.all()
@@ -52,6 +52,10 @@ def delete(id):
      db.session.commit()
      return redirect("/consultar")
 
+@app.route('/responsaveis')
+def responsaveis():
+     return render_template('responsaveis.html')
+     
 if __name__ == '__main__':
      db.create_all()
      app.run(debug=True)
