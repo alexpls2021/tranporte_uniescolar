@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/styles.css') }} ">
+    <title>consultar</title>
+</head>
+<body>
+
+    <section id="cadastro">
+        <div id="card">
+            <h4>Cadastro do Transportador</h4>
+
+                <form action="/cadastro" method="POST">
+                    <div class="label-float">
+                        <input type="text" id="nome" name="nome" placeholder=" " required >
+                        <label for="">Nome</label>
+                    </div>
+
+                    <div class="label-float">
+                        <input type="text" id="cpf" name="cpf" placeholder=" " required >
+                        <label for="">CPF</label>
+                    </div>
+
+                    <div class="label-float">
+                        <input type="text" id="end" name="end" placeholder=" " required >
+                        <label for="">Endreço</label>
+                    </div>
+
+                    <div class="label-float">
+                        <input type="text" id="email" name="email" placeholder=" " required >
+                        <label for="">E-mail</label>
+                    </div>
+                    
+                    <div class="justify-center">
+                        <button type="submit" class="btn" id="btn_cadastrar">Cadastrar</button>
+                        <a href="/" class="btn">Voltar</a>
+                    </div>
+
+
+
+                    
+
+                </form>
+        </div>
+
+    </section>
+    
+</body>
+</html>
