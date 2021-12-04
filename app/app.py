@@ -39,3 +39,7 @@ def escola():
 @app.route('/transportado')
 def transportado():
     return render_template('transportado.html')
+
+
+if __name__ == '__main__':
+     app.run(debug=True)
