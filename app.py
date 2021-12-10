@@ -55,6 +55,10 @@ def delete(id):
 @app.route('/responsaveis')
 def responsaveis():
      return render_template('responsaveis.html')
+
+@app.route('/kodomo')
+def kodomo():
+     return render_template('kodomo.html')
      
 if __name__ == '__main__':
      db.create_all()
