@@ -65,7 +65,7 @@
 
   section#cadastro {
     background: linear-gradient(
-      #3359ec 50%,
+      #ffc107 50%,
       #fff 50%
     );
     width: 100%;
@@ -78,7 +78,7 @@
 
   section#cadastro div#card {
     position: relative;
-    background-color: #c3ffff;
+    background-color: #fff;
     padding: 30px;
     border-radius: 2%;
     border: 1px solid #001052;
