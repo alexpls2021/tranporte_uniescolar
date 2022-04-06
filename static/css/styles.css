@@ -37,6 +37,10 @@
     border: 1px black solid;
   }
 
+ #texto p {
+text-align: center;
+ }
+
   nav ul {
     display: flex;
     list-style: none;
