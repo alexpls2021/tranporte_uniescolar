@@ -28,11 +28,11 @@
   
   #imagem_van {
     display: block;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 100%;
     width: 30rem;
     padding: 0.4rem;
-    margin-left: 1rem;
     border-radius: 40px;
     border: 1px black solid;
   }
