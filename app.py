@@ -52,9 +52,9 @@ def delete(id):
      db.session.commit()
      return redirect("/consultar")
 
-@app.route('/responsaveis')
-def responsaveis():
-     return render_template('responsaveis.html')
+@app.route('/formulario')
+def formulario():
+     return render_template('formulario.html')
 
 @app.route('/escola')
 def escola():
