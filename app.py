@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///pessoas.sqlite3"
 db = SQLAlchemy(app)
 
-
+aaaaa
 class Pessoas(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(150), nullable=False)
