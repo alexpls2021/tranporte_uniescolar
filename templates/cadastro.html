@@ -1,64 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=" {{ url_for('static', filename='css/styles.css') }} ">
-    <title>cadastro</title>
-</head>
-<body>
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href=" {{ url_for('static', filename='css/styles.css') }} ">
+      <title>cadastro</title>
+    </head>
 
-    <section id="cadastro">
-        <div id="card">
-            <h4>Cadastro do Transportador</h4>
+    <body>
 
-                <form action="/cadastro" method="POST">
-                    <div class="label-float">
-                        <input type="text" id="nome" name="nome" placeholder=" " required >
-                        <label for="">Nome</label>
-                    </div>
+        <section id="cadastro">
+            <div id="card">
+                <h4>Cadastro do Transportador</h4>
 
-                    <div class="label-float">
-                        <input type="text" id="cpf" name="cpf" placeholder=" " required >
-                        <label for="">CPF</label>
-                    </div>
+                    <form action="/cadastro" method="POST">
+                        <div class="label-float">
+                            <input type="text" id="nome" name="nome" placeholder=" " required >
+                            <label for="">Nome</label>
+                        </div>
 
-                    <div class="label-float">
-                        <input type="text" id="end" name="end" placeholder=" " required >
-                        <label for="">Endereço</label>
-                    </div>
+                        <div class="label-float">
+                            <input type="text" id="cpf" name="cpf" placeholder=" " required >
+                            <label for="">CPF</label>
+                        </div>
 
-                    <div class="label-float">
-                        <input type="text" id="email" name="email" placeholder=" " required >
-                        <label for="">E-mail</label>
-                    </div>
-                    
-                    <div class="justify-center">
-                        <button type="submit" class="btn" id="btn_cadastrar">Cadastrar</button>
-                        <a href="/" class="btn">Voltar</a>
-                    </div>
+                        <div class="label-float">
+                            <input type="text" id="end" name="end" placeholder=" " required >
+                            <label for="">Endereço</label>
+                        </div>
 
+                        <div class="label-float">
+                            <input type="text" id="email" name="email" placeholder=" " required >
+                            <label for="">E-mail</label>
+                        </div>
+                        
+                        <div class="justify-center">
+                            <button type="submit" class="btn" id="btn_cadastrar">Cadastrar</button>
+                            <a href="/" class="btn">Voltar</a>
+                        </div>
 
+                    </form>
+            </div>
 
-                    
+        </section>
 
-                </form>
+        <!--API para libras-->
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+            </div>
         </div>
+        <!--<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>-->
 
-    </section>
+        <script>
+            (function(d)
+            {var s = d.createElement("script");
 
-    <!--API para libras-->
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-          <div class="vw-plugin-top-wrapper"></div>
-        </div>
-      </div>
-      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-      <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-      </script>
+            /* Attributes customs */
+            s.setAttribute("data-size", "large");
+            s.setAttribute("data-color", "#5e3a4e"); 
+            s.setAttribute("data-mobile", true);
+
+            /* Attributes Needed */
+            s.setAttribute("data-account", "rlAuTf3ji5");
+            s.setAttribute("src","https://cdn.userway.org/widget.js");
+            (d.body || d.head).appendChild(s);})(document)
+        </script>
+        <noscript>
+        Please ensure Javascript is enabled for purposes of 
+        <a href="https://userway.org">website accessibility</a>
+        </noscript>
     
-</body>
+    </body>
+
 </html>
