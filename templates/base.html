@@ -30,19 +30,19 @@
                 <div class="collapse navbar-collapse" id="navegacao">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="/cadastro" class="nav-link">Transportador</a>
+                            <a href="/cadastro" class="nav-link {%if active == 'cadastro'%}active{%endif%}">Transportador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/formulario">Formulário</a>
+                            <a class="nav-link {%if active == 'formulario'%}active{%endif%}" href="/formulario">Formulário</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="escola">Escola</a>
+                            <a class="nav-link {%if active == 'escola'%}active{%endif%}" href="escola">Escola</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/localizacao" class="nav-link">Localizacão</a>
+                            <a href="/localizacao" class="nav-link {%if active == 'localizacao'%}active{%endif%}">Localizacão</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/consultar" class="nav-link">Consultar</a>
+                            <a href="/consultar" class="nav-link {%if active == 'consultar'%}active{%endif%}">Consultar</a>
                         </li>
                         
                     </ul>

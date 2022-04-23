@@ -37,13 +37,13 @@ def cadastro():
         db.session.add(pessoa)
         db.session.commit()
         return redirect("/#header")
-    return render_template("cadastro.html")
+    return render_template("cadastro.html", active='cadastro')
 
 
 @app.route("/consultar")
 def consultar():
     pessoas = Pessoas.query.all()
-    return render_template("consultar.html", pessoas=pessoas)
+    return render_template("consultar.html", pessoas=pessoas, active='consultar')
 
 
 @app.route("/delete/<id>")
@@ -56,17 +56,17 @@ def delete(id):
 
 @app.route("/formulario")
 def formulario():
-    return render_template("formulario.html")
+    return render_template("formulario.html", active='formulario')
 
 
 @app.route("/escola")
 def escola():
-    return render_template("escola.html")
+    return render_template("escola.html", active='escola')
     
 
 @app.route("/localizacao")
 def localizacao():
-    return render_template("localizacao.html")
+    return render_template("localizacao.html", active='localizacao')
 
 
 if __name__ == "__main__":
