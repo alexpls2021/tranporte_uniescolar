@@ -62,6 +62,11 @@ def formulario():
 @app.route("/escola")
 def escola():
     return render_template("escola.html")
+    
+
+@app.route("/localizacao")
+def localizacao():
+    return render_template("localizacao.html")
 
 
 if __name__ == "__main__":
