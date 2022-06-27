@@ -58,6 +58,12 @@
    font-size: 20pt;
  }
 
+  #texto-cadastro {
+   text-align: center;
+   color: rgb(14, 5, 5);
+ }
+ 
+
   nav ul {
     display: flex;
     list-style: none;
@@ -103,11 +109,11 @@
   section#cadastro div#card {
     position: relative;
     background-color: #fff;
-    padding: 30px;
+    padding: 20px;
     border-radius: 2%;
     border: 1px solid #001052;
     box-shadow: 5px 5px 1px 0px #00000090;
-    width: 400px;
+    width: 600px;
   }
   
   section#cadastro div.label-float {
