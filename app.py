@@ -12,12 +12,14 @@ class Pessoas(db.Model):
     cpf = db.Column(db.String(11), nullable=False)
     end = db.Column(db.String(300), nullable=False)
     email = db.Column(db.String(150), nullable=False)
+    telefone = db.Column(db.String(11), nullable=False)
 
-    def __init__(self, nome, cpf, end, email):
+    def __init__(self, nome, cpf, end, email, telefone):
         self.nome = nome
         self.cpf = cpf
         self.end = end
         self.email = email
+        self.telefone = telefone
 
 
 @app.route("/")
@@ -33,6 +35,7 @@ def cadastro():
             request.form["cpf"],
             request.form["end"],
             request.form["email"],
+            request.form["telefone"],
         )
         db.session.add(pessoa)
         db.session.commit()

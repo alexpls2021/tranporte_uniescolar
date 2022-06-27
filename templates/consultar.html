@@ -17,6 +17,7 @@
                     <th>CPF</th>
                     <th>Endereço</th>
                     <th>Email</th>
+                    <th>telefone</th>
                     <th>Opção</th>
                 </tr>
             </thead>
@@ -28,6 +29,7 @@
                     <td>{{p.cpf}}</td>
                     <td>{{p.end}}</td>
                     <td>{{p.email}}</td>
+                    <td>{{p.telefone}}</td>
                     <td><a href="/delete/{{p.id}}">Apagar</a></td>
                 </tr>
                 {% endfor %}

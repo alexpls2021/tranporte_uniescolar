@@ -5,7 +5,7 @@
 {%block content%}
 <section id="cadastro">
     <div id="card">
-        <h4>Cadastro do Transportador</h4>
+        <h4>Cadastro</h4>
 
             <form action="/cadastro" method="POST">
                 <div class="label-float">
@@ -27,11 +27,20 @@
                     <input type="text" id="email" name="email" placeholder=" " required >
                     <label for="">E-mail</label>
                 </div>
+
+                <div class="label-float">
+                    <input type="text" id="telefone" name="telefone" placeholder=" " required >
+                    <label for="">Telefone</label>
+                </div>
                 
                 <div class="justify-center">
                     <button type="submit" class="btn" id="btn_cadastrar">Cadastrar</button>
                     <a href="/" class="btn">Voltar</a>
                 </div>
+
+                <p style="font-family: Arial, Helvetica, sans-serif; ">    
+                    A Uniescolar agradece o seu cadastro!!! Logo entraremos encontrado Obrigado 
+                </p>
 
             </form>
     </div>
