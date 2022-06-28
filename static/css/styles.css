@@ -45,6 +45,18 @@
     border: 1px black solid;
   }
 
+  .img-01 {
+    max-width: 1200px;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em;
+    border: 1px black solid;
+    border-radius: 2%;
+  }
+
   img {
     max-width: 600px;
     max-height: 360px;
@@ -63,6 +75,10 @@
    color: rgb(14, 5, 5);
  }
  
+ #texto-01 {
+  text-align: center;
+  color: rgb(14, 5, 5);
+}
 
   nav ul {
     display: flex;
