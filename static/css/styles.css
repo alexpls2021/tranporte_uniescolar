@@ -47,14 +47,14 @@
 
   .img-01 {
     max-width: 1200px;
-    max-height: 500px;
+    max-height: 400px;
     width: auto;
     height: auto;
     margin-left: auto;
     margin-right: auto;
     width: 6em;
     border: 1px black solid;
-    border-radius: 2%;
+    border-radius: 3%;
   }
 
   img {
