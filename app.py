@@ -13,13 +13,15 @@ class Pessoas(db.Model):
     end = db.Column(db.String(300), nullable=False)
     email = db.Column(db.String(150), nullable=False)
     telefone = db.Column(db.String(11), nullable=False)
+    tipo_cliente = db.Column(db.String(11), nullable=False)
 
-    def __init__(self, nome, cpf, end, email, telefone):
+    def __init__(self, nome, cpf, end, email, telefone, tipo_cliente):
         self.nome = nome
         self.cpf = cpf
         self.end = end
         self.email = email
         self.telefone = telefone
+        self.tipo_cliente = tipo_cliente
 
 
 @app.route("/")
@@ -36,6 +38,7 @@ def cadastro():
             request.form["end"],
             request.form["email"],
             request.form["telefone"],
+            request.form["tipo_cliente"]
         )
         db.session.add(pessoa)
         db.session.commit()

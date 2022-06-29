@@ -18,6 +18,7 @@
                     <th>Endereço</th>
                     <th>Email</th>
                     <th>telefone</th>
+                    <th>Tipo Cliente</th>
                     <th>Opção</th>
                 </tr>
             </thead>
@@ -30,6 +31,7 @@
                     <td>{{p.end}}</td>
                     <td>{{p.email}}</td>
                     <td>{{p.telefone}}</td>
+                    <td>{{p.tipo_cliente}}</td>
                     <td><a href="/delete/{{p.id}}">Apagar</a></td>
                 </tr>
                 {% endfor %}
