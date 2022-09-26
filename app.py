@@ -45,7 +45,7 @@ def cadastro():
         return redirect("/#header")
     return render_template("cadastro.html", active='cadastro')
 
-
+ # Rota da consulta
 @app.route("/consultar")
 def consultar():
     pessoas = Pessoas.query.all()
