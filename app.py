@@ -23,7 +23,7 @@ class Pessoas(db.Model):
         self.telefone = telefone
         self.tipo_cliente = tipo_cliente
 
-db.create_all() 
+
 
 @app.route("/")
 def index():
