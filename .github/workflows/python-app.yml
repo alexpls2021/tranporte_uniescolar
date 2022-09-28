@@ -5,6 +5,10 @@ on:
       branches: ["main"]
    pull_request:
       branches: ["main"] 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b23b56db4b806020b7f9da5210b70966cc406508
 
 jobs:
   build:
